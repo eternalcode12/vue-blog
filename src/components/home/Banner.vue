@@ -10,14 +10,33 @@
         <span>pariatur Excepteur sint occaec non anim id est laborum.</span>
       </div>
       <div class="line"></div>
+      <div class="contact">
+        <a
+          :href="fontIcon.url"
+          v-for="(fontIcon, index) of fontIcons"
+          :key="index"
+          target="_blank"
+        >
+          <i
+            :class="['fa', 'fa-icon', `${fontIcon.icon}`]"
+            aria-hidden="true"
+          ></i>
+        </a>
+      </div>
     </div>
     <div class="cover"></div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Banner",
+  computed: {
+    ...mapState({
+      fontIcons: (state) => state.home.fontIcons,
+    }),
+  },
 };
 </script>
 
