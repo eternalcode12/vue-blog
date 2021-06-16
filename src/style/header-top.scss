@@ -1,0 +1,39 @@
+// logo 颜色
+$logo-color: #222;
+$logo-font-weight: 600;
+$logo-font-size: 1.2em;
+$navigator-size: .8em;
+
+div.header-top {
+  height: 70px;
+  background-color: #fff;
+  cursor: pointer;
+  div.ww {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    ul.navigation {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+      align-items: center;
+      li {
+        padding: 0 25px 0;
+        cursor: pointer;
+        a {
+          color: $logo-color;
+          font-size: $navigator-size;
+        }
+        &:hover a{
+          color: #999;
+        }
+        &:hover i {
+          color: #999;
+        }
+      }
+      i.fa-angle-down {
+        margin-left: 5px;
+      }
+    }
+  }
+}
