@@ -1,6 +1,6 @@
 div.banner {
-  width: 1440px;
-  height: 800px;
+  width: 1394px;
+  height: 720px;
   background: url('../../assets/images/bg-1.jpeg');
   background-size: cover;
   position: relative;
@@ -8,7 +8,7 @@ div.banner {
   padding: 320px 0 250px 0;
   position: relative;
   div.title {
-    margin-top: -50px;
+    margin-top: -70px;
     position: relative;
     z-index: 5;
     font-size: 2.7em;
@@ -54,8 +54,8 @@ div.banner {
     
   }
   div.cover {
-    width: 1440px;
-    height: 800px;
+    width: 1394px;
+    height: 720px;
     position: absolute;
     top: 0;
     background: rgba(138, 138, 138, .5);

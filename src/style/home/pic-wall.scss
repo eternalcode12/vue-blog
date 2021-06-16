@@ -1,0 +1,20 @@
+div.pic-wall {
+  margin-top: 70px;
+  div.ww {
+    display: flex;
+    justify-content: center;
+    div {
+      padding: 3px 0;
+      margin: 0 20px;
+      // border-bottom: 1px solid #222;
+      cursor: pointer;
+      color: rgb(128, 124, 124);
+      &:hover {
+        color: #222;
+      }
+    }
+    div.setBottom {
+      border-bottom: 1px solid #222;
+    }
+  }
+}

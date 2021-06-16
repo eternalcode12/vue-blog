@@ -1,4 +1,5 @@
 const state = {
+  // 导航
   navigators: [{
       name: 'HOME',
       url: '/',
@@ -22,7 +23,7 @@ const state = {
       url: '/contact'
     },
   ],
-  // fontIcons: ['fa-facebook', 'fa-twitter', 'fa-dribbble', 'fa-instagram', 'fa-google-plus']
+  // 联系方式
   fontIcons: [{
       icon: 'fa-facebook',
       url: 'https://facebook.com'
@@ -42,7 +43,9 @@ const state = {
       icon: 'fa-google-plus',
       url: 'https://google.com'
     }
-  ]
+  ],
+  // 图片墙
+  picChoices: ['ALL', 'BRANDING', 'DESIGN', 'PHOTO', 'COFFEE']
 }
 
 const mutations = {
