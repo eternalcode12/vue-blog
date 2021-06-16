@@ -1,5 +1,5 @@
 <template>
-  <div class="header-top">
+  <div class="header-top" :class="{ addBottomShadow: flag }">
     <div class="ww">
       <div class="logo">ETERNALCODER</div>
       <ul class="navigation">
@@ -25,10 +25,8 @@ export default {
   computed: {
     ...mapState({
       navigators: (state) => state.home.navigators,
+      flag: (state) => state.home.flag,
     }),
-  },
-  created() {
-    console.log(this.navigators);
   },
 };
 </script>

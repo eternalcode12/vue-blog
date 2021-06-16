@@ -16,22 +16,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "PicWall",
-  data() {
-    return {
-      bottomLine: 0,
-    };
-  },
   computed: {
     ...mapState({
       picChoices: (state) => state.home.picChoices,
+      bottomLine: (state) => state.home.bottomLine,
     }),
   },
   methods: {
+    ...mapMutations({
+      updateBottomLine: (mutations) => mutations.home.updateBottomLine,
+    }),
     addBottomLine(index) {
-      this.bottomLine = index;
+      this.$store.commit("updateBottomLine", index);
     },
   },
 };

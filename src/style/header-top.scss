@@ -8,6 +8,11 @@ div.header-top {
   height: 70px;
   background-color: #fff;
   cursor: pointer;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1000;
   div.ww {
     display: flex;
     height: 100%;
@@ -36,4 +41,9 @@ div.header-top {
       }
     }
   }
+}
+
+// 添加底部阴影
+div.addBottomShadow {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
 }

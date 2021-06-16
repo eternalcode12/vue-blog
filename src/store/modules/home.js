@@ -45,11 +45,54 @@ const state = {
     }
   ],
   // 图片墙
-  picChoices: ['ALL', 'BRANDING', 'DESIGN', 'PHOTO', 'COFFEE']
+  picChoices: ['ALL', 'BRANDING', 'DESIGN', 'PHOTO', 'COFFEE'],
+  // 图片导航链接判断
+  bottomLine: 0,
+  // 图片
+  pics: [
+    [{
+        url: require('@/assets/images/img-1.png'),
+        alt: 'img-1.png'
+      }, {
+        url: require('@/assets/images/img-2.png'),
+        alt: 'img-2.png'
+      },
+      {
+        url: require('@/assets/images/img-4.png'),
+        alt: 'img-4.png'
+      }
+    ],
+    [{
+      url: require('@/assets/images/img-8.png'),
+      alt: 'img-8.png'
+    }, {
+      url: require('@/assets/images/img-7.png'),
+      alt: 'img-7.png'
+    }, ],
+    [{
+        url: require('@/assets/images/img-5.png'),
+        alt: 'img-5.png'
+      }, {
+        url: require('@/assets/images/img-6.png'),
+        alt: 'img-6.png'
+      },
+      {
+        url: require('@/assets/images/img-3.png'),
+        alt: 'img-3.png'
+      }
+    ],
+  ],
+  // 判断是否滚动并设置对应样式
+  flag: false
 }
 
 const mutations = {
-
+  updateBottomLine(state, index) {
+    state.bottomLine = index
+  },
+  updateAddBottomShadowFlag(state, val) {
+    state.flag = val
+  }
 }
 
 const actions = {

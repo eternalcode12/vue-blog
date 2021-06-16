@@ -3,6 +3,7 @@
     <header-top></header-top>
     <banner></banner>
     <pic-wall></pic-wall>
+    <photo-wall></photo-wall>
   </div>
 </template>
 
@@ -10,12 +11,43 @@
 import HeaderTop from "@/components/HeaderTop";
 import Banner from "@/components/home/Banner";
 import PicWall from "@/components/home/PicWall";
+import PhotoWall from "@/components/home/PhotoWall";
+import { mapMutations, mapState, mutations } from "vuex";
 export default {
   name: "Home",
   components: {
     HeaderTop,
     Banner,
     PicWall,
+    PhotoWall,
+  },
+  data() {
+    return {
+      scroll: "",
+    };
+  },
+  computed: {
+    ...mapState({
+      flag: (state) => state.home.flag,
+    }),
+  },
+  methods: {
+    ...mapMutations({
+      updateAddBottomShadowFlag: (mutations) =>
+        mutations.home.updateAddBottomShadowFlag,
+    }),
+    scrollDs(e) {
+      // this.scroll = document.body.scrollTop;
+      // console.log(this.scroll);
+      if (e.path[1].scrollY !== 0) {
+        this.$store.commit("updateAddBottomShadowFlag", true);
+      } else {
+        this.$store.commit("updateAddBottomShadowFlag", false);
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.scrollDs, true);
   },
 };
 </script>

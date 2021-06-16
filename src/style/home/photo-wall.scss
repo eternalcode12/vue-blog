@@ -1,0 +1,51 @@
+div.photo-wall {
+  width: 1394px;
+  overflow: hidden;
+  margin-top: 20px;
+  div.ww {
+    display: flex;
+    justify-content: space-evenly;
+    img {
+      margin: 20px 0;
+      cursor: pointer;
+      border: 5px solid rgb(222, 222, 222);
+      &:hover {
+        filter: blur(2px);
+      }
+    }
+    div.left {
+      img {
+        width: 332px;
+        height: 224px;
+      }
+      img:nth-of-type(3) {
+        width: 332px;
+        height: 332px;
+      }
+    }
+    div.middle {
+      img:nth-of-type(1) {
+        width: 332px;
+        height: 398px;
+      }
+      img:nth-of-type(2) {
+        width: 332px;
+        height: 464px;
+      }
+    }
+    div.right {
+      img:nth-of-type(1) {
+        width: 332px;
+        height: 332px;
+      }
+      img:nth-of-type(2) {
+        width: 332px;
+        height: 224px;
+      }
+      img:nth-of-type(3) {
+        width: 332px;
+        height: 240px;
+      }
+    }
+  }
+}
