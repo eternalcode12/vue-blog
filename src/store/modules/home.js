@@ -99,7 +99,18 @@ const state = {
     ],
   ],
   // 判断是否滚动并设置对应样式
-  flag: false
+  flag: false,
+  // footer 的联系图标
+  footerIcons: [{
+    icon: 'fa-paper-plane-o',
+    text: 'eternalcoder@163.com'
+  }, {
+    icon: 'fa-mobile',
+    text: '13170032175'
+  }, {
+    icon: 'fa-globe',
+    text: 'http://www.eternalcoder.com'
+  }]
 }
 
 const mutations = {

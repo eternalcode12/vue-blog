@@ -1,0 +1,19 @@
+div.foot {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(34, 34, 34);
+  div.ww {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    div.content {
+      color: #fff;
+      font-size: 1.2em;
+      a {
+        color: #007bff;
+        font-size: 1.2em;
+      }
+    }
+  }
+}

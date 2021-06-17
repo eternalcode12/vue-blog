@@ -4,6 +4,8 @@
     <banner></banner>
     <pic-wall></pic-wall>
     <photo-wall></photo-wall>
+    <footer-banner></footer-banner>
+    <foot></foot>
   </div>
 </template>
 
@@ -12,6 +14,8 @@ import HeaderTop from "@/components/HeaderTop";
 import Banner from "@/components/home/Banner";
 import PicWall from "@/components/home/PicWall";
 import PhotoWall from "@/components/home/PhotoWall";
+import FooterBanner from "@/components/home/FooterBanner";
+import Foot from "@/components/Foot";
 import { mapMutations, mapState, mutations } from "vuex";
 export default {
   name: "Home",
@@ -20,6 +24,8 @@ export default {
     Banner,
     PicWall,
     PhotoWall,
+    FooterBanner,
+    Foot,
   },
   data() {
     return {
