@@ -9,13 +9,9 @@ div.photo-wall {
       margin: 20px 0;
       cursor:pointer;
       position: relative;
-      // &:hover {
-      //   filter: blur(2px);
-      //   border: 5px solid rgb(222, 222, 222);
-      // }
     }
     div.left {
-      div {
+      div.template {
         position: relative;
         z-index: 11;
         img {
@@ -24,7 +20,6 @@ div.photo-wall {
         }
         &:nth-of-type(1)::after {
           content: "";
-          // display: none;
           opacity: 0;
           width: 312px;
           height: 204px;
@@ -34,8 +29,16 @@ div.photo-wall {
           left: 10px;
           transition: all .5s;
         }
-        &:nth-of-type(1):hover::after {
+        &:nth-of-type(1):hover::after{
           opacity: 1;
+        }
+        &:nth-of-type(1):hover div.title{
+          opacity: 1;
+          z-index: 111;
+        }
+        &:nth-of-type(1):hover div.content{
+          opacity: 1;
+          z-index: 111;
         }
         &:nth-of-type(2)::after {
           content: "";
@@ -51,6 +54,40 @@ div.photo-wall {
         }
         &:nth-of-type(2):hover::after {
           opacity: 1;
+        }
+        &:nth-of-type(2):hover div.title {
+          opacity: 1;
+          z-index: 111;
+        }
+        &:nth-of-type(2):hover div.content {
+          z-index: 111;
+          opacity: 1;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 39%;
+          opacity: 0;
+          transition: all .5s;
+        }
+        div.content {
+          position: absolute;
+          left: 22%;
+          bottom: 50px;
+          opacity: 0;
+          transition: all .5s;
+        }
+      }
+      div:nth-of-type(2) {
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 44%;
+        }
+        div.content {
+          position: absolute;
+          left: 26%;
+          bottom: 50px;
         }
       }
       div:nth-of-type(3) {
@@ -73,10 +110,28 @@ div.photo-wall {
         &:hover::after {
           opacity: 1;
         }
+        &:hover div.title {
+          opacity: 1;
+          z-index: 111;
+        }
+        &:hover div.content {
+          opacity: 1;
+          z-index: 111;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 45%;
+        }
+        div.content {
+          position: absolute;
+          left: 28%;
+          bottom: 50px;
+        }
       }
     }
     div.middle {
-      div {
+      div.template {
         position: relative;
         img:nth-of-type(1) {
           width: 332px;
@@ -101,7 +156,15 @@ div.photo-wall {
         &:nth-of-type(1):hover::after {
           opacity: 1;
         }
-        &:nth-of-type(2):after {
+        &:nth-of-type(1):hover div.title {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(1):hover div.content {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(2)::after {
           content: "";
           // display: none;
           opacity: 0;
@@ -116,13 +179,51 @@ div.photo-wall {
         &:nth-of-type(2):hover::after {
           opacity: 1;
         }
+        &:nth-of-type(2):hover div.title {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(2):hover div.content {
+          opacity: 1;
+          z-index: 1111;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 45%;
+          opacity: 0;
+          transition: all .5s;
+        }
+        div.content {
+          position: absolute;
+          left: 28%;
+          bottom: 50px;
+          opacity: 0;
+          transition: all .5s;
+        }
+        &:nth-of-type(1) {
+          div.title {
+            position: absolute;
+            bottom: 80px;
+            left: 43%;
+            opacity: 0;
+            transition: all .5s;
+          }
+          div.content {
+            position: absolute;
+            left: 24%;
+            bottom: 50px;
+            opacity: 0;
+            transition: all .5s;
+          }
+        }
       }
     }
     div.right {
-      div {
+      div.template {
         position: relative;
       }
-      div:nth-of-type(1) {
+      div.template:nth-of-type(1) {
         img.imgList:nth-of-type(1) {
           width: 332px;
           height: 332px;
@@ -142,8 +243,30 @@ div.photo-wall {
         &:nth-of-type(1):hover::after {
           opacity: 1;
         }
+        &:nth-of-type(1):hover div.title {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(1):hover div.content {
+          opacity: 1;
+          z-index: 1111;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 44%;
+          opacity: 0;
+          transition: all .5s;
+        }
+        div.content {
+          position: absolute;
+          left: 29%;
+          bottom: 50px;
+          opacity: 0;
+          transition: all .5s;
+        }
       }
-      div:nth-of-type(2) {
+      div.template:nth-of-type(2) {
         img.imgList:nth-of-type(1) {
           width: 332px;
           height: 224px;
@@ -162,6 +285,28 @@ div.photo-wall {
         }
         &:nth-of-type(2):hover::after {
           opacity: 1;
+        }
+        &:nth-of-type(2):hover div.title {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(2):hover div.content {
+          opacity: 1;
+          z-index: 1111;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 43%;
+          opacity: 0;
+          transition: all .5s;
+        }
+        div.content {
+          position: absolute;
+          left: 27%;
+          bottom: 50px;
+          opacity: 0;
+          transition: all .5s;
         }
       }
       div:nth-of-type(3) {
@@ -183,6 +328,28 @@ div.photo-wall {
         }
         &:nth-of-type(3):hover::after {
           opacity: 1;
+        }
+        &:nth-of-type(3):hover div.title {
+          opacity: 1;
+          z-index: 1111;
+        }
+        &:nth-of-type(3):hover div.content {
+          opacity: 1;
+          z-index: 1111;
+        }
+        div.title {
+          position: absolute;
+          bottom: 80px;
+          left: 45%;
+          opacity: 0;
+          transition: all .5s;
+        }
+        div.content {
+          position: absolute;
+          left: 29%;
+          bottom: 50px;
+          opacity: 0;
+          transition: all .5s;
         }
       }
     }
