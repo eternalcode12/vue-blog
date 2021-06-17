@@ -37,8 +37,6 @@ export default {
         mutations.home.updateAddBottomShadowFlag,
     }),
     scrollDs(e) {
-      // this.scroll = document.body.scrollTop;
-      // console.log(this.scroll);
       if (e.path[1].scrollY !== 0) {
         this.$store.commit("updateAddBottomShadowFlag", true);
       } else {

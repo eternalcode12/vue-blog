@@ -3,17 +3,34 @@
     <div class="ww">
       <div class="left">
         <template v-for="(leftPic, index) of pics[0]">
-          <img :key="index" :src="leftPic.url" :alt="leftPic.alt" />
+          <div :key="index">
+            <img :src="leftPic.url" :alt="leftPic.alt" class="imgList" />
+            <div class="title"></div>
+          </div>
         </template>
       </div>
       <div class="middle">
         <template v-for="(middlePic, index) of pics[1]">
-          <img :key="index" :src="middlePic.url" :alt="middlePic.alt" />
+          <div :key="index">
+            <img
+              :key="index"
+              :src="middlePic.url"
+              :alt="middlePic.alt"
+              class="imgList"
+            />
+          </div>
         </template>
       </div>
       <div class="right">
         <template v-for="(rightPic, index) of pics[2]">
-          <img :key="index" :src="rightPic.url" :alt="rightPic.alt" />
+          <div :key="index">
+            <img
+              :key="index"
+              :src="rightPic.url"
+              :alt="rightPic.alt"
+              class="imgList"
+            />
+          </div>
         </template>
       </div>
     </div>
