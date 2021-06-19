@@ -7,8 +7,8 @@
           <div>
             <a
               href="javascript:void(0);"
-              @mouseover="updateShowDropMenu"
-              @mouseleave="updateHideDropMenu"
+              @mouseover="dropMenuFlag = true"
+              @mouseleave="dropMenuFlag = false"
               v-if="navigator.name === 'BLOG'"
               >{{ navigator.name }}</a
             >
@@ -21,7 +21,12 @@
           </div>
         </li>
         <transition name="fade">
-          <div class="dropMenu">
+          <div
+            class="dropMenu"
+            v-show="dropMenuFlag"
+            @mouseover="dropMenuFlag = true"
+            @mouseleave="dropMenuFlag = false"
+          >
             <a :href="item.url" :key="index" v-for="(item, index) of blogChild">
               {{ item.name }}
             </a>
@@ -37,14 +42,15 @@ import { mapMutations, mapState } from "vuex";
 export default {
   name: "HeaderTop",
   data() {
-    return {};
+    return {
+      dropMenuFlag: false,
+    };
   },
   computed: {
     ...mapState({
       navigators: (state) => state.home.navigators,
       flag: (state) => state.home.flag,
       blogChild: (state) => state.home.blogChild,
-      showDropMenu: (state) => state.home.showDropMenu,
     }),
   },
   methods: {
@@ -53,12 +59,6 @@ export default {
     }),
     toHome() {
       this.$store.commit("toGoBackHome", this.$router);
-    },
-    updateShowDropMenu() {
-      this.showDropMenu = true;
-    },
-    updateHideDropMenu() {
-      this.showDropMenu = false;
     },
   },
 };
