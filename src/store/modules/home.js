@@ -1,9 +1,10 @@
+const router = require('../../router/index')
+
 const state = {
   // 导航
   navigators: [{
       name: 'HOME',
       url: '/',
-      flag: true
     },
     {
       name: 'ABOUT',
@@ -109,7 +110,7 @@ const state = {
     text: '13170032175'
   }, {
     icon: 'fa-globe',
-    text: 'http://www.eternalcoder.com'
+    text: 'eternalcoder.top'
   }]
 }
 
@@ -119,6 +120,9 @@ const mutations = {
   },
   updateAddBottomShadowFlag(state, val) {
     state.flag = val
+  },
+  toGoBackHome(state, router) {
+    router.push('/')
   }
 }
 

@@ -17,6 +17,9 @@ div.header-top {
     display: flex;
     height: 100%;
     align-items: center;
+    div.logo {
+      font-weight: 600;
+    }
     ul.navigation {
       display: flex;
       justify-content: flex-end;

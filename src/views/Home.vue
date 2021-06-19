@@ -16,7 +16,6 @@ import PicWall from "@/components/home/PicWall";
 import PhotoWall from "@/components/home/PhotoWall";
 import FooterBanner from "@/components/home/FooterBanner";
 import Foot from "@/components/Foot";
-import { mapMutations, mapState, mutations } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -26,32 +25,6 @@ export default {
     PhotoWall,
     FooterBanner,
     Foot,
-  },
-  data() {
-    return {
-      scroll: "",
-    };
-  },
-  computed: {
-    ...mapState({
-      flag: (state) => state.home.flag,
-    }),
-  },
-  methods: {
-    ...mapMutations({
-      updateAddBottomShadowFlag: (mutations) =>
-        mutations.home.updateAddBottomShadowFlag,
-    }),
-    scrollDs(e) {
-      if (e.path[1].scrollY !== 0) {
-        this.$store.commit("updateAddBottomShadowFlag", true);
-      } else {
-        this.$store.commit("updateAddBottomShadowFlag", false);
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.scrollDs, true);
   },
 };
 </script>

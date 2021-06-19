@@ -1,11 +1,11 @@
 <template>
   <div class="header-top" :class="{ addBottomShadow: flag }">
     <div class="ww">
-      <div class="logo">ETERNALCODER</div>
+      <div class="logo" @click="toHome">ETERNALCODER</div>
       <ul class="navigation">
         <li v-for="(navigator, index) of navigators" :key="index">
           <div>
-            <a href="navigator.url">{{ navigator.name }}</a>
+            <a :href="navigator.url">{{ navigator.name }}</a>
             <i
               v-if="navigator.flag"
               class="fa fa-angle-down"
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "HeaderTop",
   computed: {
@@ -27,6 +27,14 @@ export default {
       navigators: (state) => state.home.navigators,
       flag: (state) => state.home.flag,
     }),
+  },
+  methods: {
+    ...mapMutations({
+      toGoBackHome: (mutations) => mutations.home.toGoBackHome,
+    }),
+    toHome() {
+      this.$store.commit("toGoBackHome", this.$router);
+    },
   },
 };
 </script>

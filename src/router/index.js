@@ -6,8 +6,32 @@ Vue.use(VueRouter)
 const routes = [{
   path: '/',
   name: 'Home',
-  component: () => import('@/views/Home.vue')
-}, ]
+  component: () => import('@/views/Home.vue'),
+  meta: {
+    requiresAuth: false
+  }
+}, {
+  path: '/about',
+  name: 'About',
+  component: () => import('@/views/About.vue'),
+  meta: {
+    requiresAuth: false
+  }
+}, {
+  path: '/service',
+  name: 'Service',
+  component: () => import('@/views/Service.vue'),
+  meta: {
+    requiresAuth: false
+  }
+}, {
+  path: '/contact',
+  name: 'Contact',
+  component: () => import('@/views/Contact.vue'),
+  meta: {
+    requiresAuth: false
+  }
+}]
 
 const router = new VueRouter({
   mode: 'history',

@@ -1,0 +1,33 @@
+div.footer-banner {
+  padding: 100px 0 60px;
+  background-color: rgb(34, 34, 34);
+  div.ww {
+    display: flex;
+    justify-content: space-between;
+    div.item {
+      div.title {
+        color: #fff;
+        font-size: 1.2em;
+        display: flex;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          display: flex;
+          padding: 10px 0;
+          color:rgba(255,255,255,0.5);
+          cursor: pointer;
+        }
+        li:hover {
+          color: #fff;
+        }
+      }
+    }
+    div.item:nth-of-type(1) {
+      div.title {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
