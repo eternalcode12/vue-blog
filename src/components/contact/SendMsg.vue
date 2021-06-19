@@ -85,37 +85,39 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "SendMsg",
   computed: {
     ...mapState({
       contents: (state) => state.contact.contents,
       showContents: (state) => state.contact.showContents,
+      form: (state) => state.contact.form,
     }),
   },
   data() {
     return {
-      form: {
-        name: "",
-        email: "",
-        subject: "",
-        password: "",
-        content: "",
-      },
       center: { lng: 0, lat: 0 },
       zoom: 3,
     };
   },
   methods: {
-    sendMsg() {},
+    ...mapMutations({
+      executeSendMsg: (mutations) => mutations.contact.executeSendMsg,
+    }),
+    sendMsg() {
+      let obj = {
+        form: this.form,
+        message: this.$message,
+      };
+      this.$store.commit("executeSendMsg", obj);
+    },
     handler({ BMap, map }) {
       this.center.lng = 116.404;
       this.center.lat = 39.915;
       this.zoom = 15;
     },
     getPoint(e) {
-      console.log(e);
       this.center.lng = e.point.lng;
       this.center.lat = e.point.lat;
     },

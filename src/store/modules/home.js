@@ -16,7 +16,7 @@ const state = {
     },
     {
       name: 'BLOG',
-      url: '/blog',
+      url: '',
       flag: true
     },
     {
@@ -24,6 +24,17 @@ const state = {
       url: '/contact'
     },
   ],
+  // blog 自路由
+  blogChild: [{
+    url: '/blog-classic',
+    name: 'CLASSIC'
+  }, {
+    url: '/blog-single',
+    name: 'SINGLE'
+  }, {
+    url: '/blog-grid',
+    name: 'GRID'
+  }],
   // 联系方式
   fontIcons: [{
       icon: 'fa-facebook',
@@ -111,7 +122,7 @@ const state = {
   }, {
     icon: 'fa-globe',
     text: 'eternalcoder.top'
-  }]
+  }],
 }
 
 const mutations = {
