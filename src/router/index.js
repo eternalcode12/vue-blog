@@ -45,6 +45,13 @@ const routes = [{
   meta: {
     requiresAuth: false
   }
+}, {
+  path: '/blog-grid',
+  name: 'BlogGrid',
+  component: () => import('@/views/childPages/blog-grid/BlogGrid.vue'),
+  meta: {
+    requiresAuth: false
+  }
 }]
 
 const router = new VueRouter({

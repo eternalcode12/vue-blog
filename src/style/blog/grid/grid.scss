@@ -1,0 +1,82 @@
+div.outer {
+  padding: 40px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  div.item {
+    width: 350px;
+    margin-top: 60px;
+    img {
+      width: 350px;
+      height: 233px;
+      border-radius: 5px;
+    }
+    div.box {
+      margin-left: 5px;
+      h5 {
+        display: flex;
+        font-size: .9em;
+        padding: 10px 0;
+        color: #807c7c!important;
+      }
+      h2 {
+        font-size: .7em;
+        display: flex;
+        padding-bottom: 15px;
+      }
+      p {
+        display: flex;
+        color: #807c7c;
+        font-weight: 500;
+      }
+      div {
+        display: flex;
+        button {
+          width: 107px;
+          height: 35px;
+          border: none;
+          outline: none;
+          background-color: #222;
+          color: #fff;
+          border-radius: 5px;
+          font-size: .9em;
+          font-weight: 500;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+// 分页样式
+.is-background {
+  margin-top: 70px;
+  display: flex;
+}
+
+::v-deep.is-background>button {
+  background-color: transparent;
+  border: 1px solid #807C74;
+  transition: all .5s;
+}
+
+::v-deep.is-background>button:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+::v-deep.el-pagination.is-background .el-pager li{
+  background-color: transparent;
+  border: 1px solid #807C74;
+  transition: all .5s;
+}
+
+::v-deep.el-pagination.is-background .el-pager li:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+::v-deep.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #222;
+  color: #fff;
+}
