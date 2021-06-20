@@ -1,7 +1,7 @@
 <template>
-  <div class="blog-classic">
+  <div class="blog-single">
     <header-top></header-top>
-    <banner-component>BLOG CLASSIC</banner-component>
+    <banner-component>BLOG SINGLE</banner-component>
     <blog-component></blog-component>
     <footer-banner></footer-banner>
     <foot></foot>
@@ -15,7 +15,7 @@ import BlogComponent from "@/components/blog/classic/BlogComponent";
 import FooterBanner from "@/components/home/FooterBanner";
 import Foot from "@/components/Foot";
 export default {
-  name: "BlogClassic",
+  name: "BlogSingle",
   components: {
     HeaderTop,
     BannerComponent,
