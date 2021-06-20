@@ -4,6 +4,7 @@ import home from './modules/home'
 import about from './modules/about'
 import service from './modules/service'
 import contact from './modules/contact'
+import classic from './modules/blog/classic'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     home,
     about,
     service,
-    contact
+    contact,
+    classic
   }
 })

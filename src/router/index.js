@@ -31,6 +31,13 @@ const routes = [{
   meta: {
     requiresAuth: false
   }
+}, {
+  path: '/blog-classic',
+  name: 'BlogClassic',
+  component: () => import('@/views/childPages/blog/BlogClassic.vue'),
+  meta: {
+    requiresAuth: false
+  }
 }]
 
 const router = new VueRouter({
