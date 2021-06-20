@@ -4,12 +4,12 @@ div.blog-component {
     div.outer {
       display: flex;
       div.left {
-        width: 730px;
+        width: 100%;
         div.item {
           margin-bottom: 60px;
           img {
-            width: 730px;
-            height: 438px;
+            width: 100%;
+            // height: 438px;
             border-radius: 5px;
           }
           h3 {
@@ -28,7 +28,7 @@ div.blog-component {
           }
           p.content {
             color: #807C74!important;
-            font-size: 1.1em;
+            font-size: .9em;
             display: flex;
             padding: 5px 0;
           }
@@ -60,4 +60,36 @@ div.blog-component {
       }
     }
   }
+}
+
+// 分页样式
+.is-background {
+  display: flex;
+}
+
+::v-deep.is-background>button {
+  background-color: transparent;
+  border: 1px solid #807C74;
+  transition: all .5s;
+}
+
+::v-deep.is-background>button:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+::v-deep.el-pagination.is-background .el-pager li{
+  background-color: transparent;
+  border: 1px solid #807C74;
+  transition: all .5s;
+}
+
+::v-deep.el-pagination.is-background .el-pager li:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+::v-deep.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #222;
+  color: #fff;
 }

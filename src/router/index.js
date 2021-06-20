@@ -38,6 +38,13 @@ const routes = [{
   meta: {
     requiresAuth: false
   }
+}, {
+  path: '/blog-single',
+  name: 'BlogSingle',
+  component: () => import('@/views/childPages/blog-single/BlogSingle.vue'),
+  meta: {
+    requiresAuth: false
+  }
 }]
 
 const router = new VueRouter({

@@ -5,7 +5,11 @@
       <div class="box">
         <div class="title">SEARCH</div>
         <div class="component">
-          <el-input placeholder="Search Keywords" v-model="keyword">
+          <el-input
+            placeholder="Search Keywords"
+            @keyup.enter.native="submit"
+            v-model="keyword"
+          >
             <i slot="prefix" class="el-input__icon el-icon-search"></i>
           </el-input>
         </div>
@@ -120,6 +124,11 @@ export default {
       populars: (state) => state.classic.populars,
       tags: (state) => state.classic.tags,
     }),
+  },
+  methods: {
+    submit() {
+      console.log(this.keyword);
+    },
   },
 };
 </script>
