@@ -27,10 +27,17 @@ div.blog-component {
             color: rgb(231, 234, 237);
           }
           p.content {
-            color: #807C74!important;
-            font-size: .9em;
+            color: #807C74 !important;
+            font-size: 0.9em;
             display: flex;
-            padding: 5px 0;
+            padding: 20px 0;
+            word-wrap: break-word;
+            word-break: break-all;
+            text-align: left;
+          }
+          p.active {
+            width: 90%;
+            font-size: 1.2em;
           }
           p:nth-of-type(2) {
             padding-top: 20px;

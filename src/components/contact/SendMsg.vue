@@ -29,9 +29,8 @@
             ></el-input>
             <el-input
               autocomplete
-              type="password"
-              v-model="form.password"
-              placeholder="Password"
+              v-model="form.phone"
+              placeholder="Phone"
             ></el-input>
           </div>
           <div class="item">
@@ -85,7 +84,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "SendMsg",
   computed: {
@@ -102,15 +101,16 @@ export default {
     };
   },
   methods: {
-    ...mapMutations({
-      executeSendMsg: (mutations) => mutations.contact.executeSendMsg,
+    ...mapActions({
+      executeSendMsg: (actions) => actions.contact.executeSendMsg,
     }),
     sendMsg() {
       let obj = {
         form: this.form,
         message: this.$message,
       };
-      this.$store.commit("executeSendMsg", obj);
+      console.log(obj);
+      this.$store.dispatch("executeSendMsg", obj);
     },
     handler({ BMap, map }) {
       this.center.lng = 116.404;

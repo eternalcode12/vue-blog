@@ -9,12 +9,8 @@
             <h3>{{ article.title }}</h3>
             <p class="desc">{{ article.info }}</p>
             <hr />
-            <p
-              class="content"
-              v-for="(item, index) of article.contents"
-              :key="index"
-            >
-              {{ item }}
+            <p class="content" :class="{ active: flag === '/blog-single' }">
+              {{ article.contents }}
             </p>
             <div>
               <button>
@@ -46,10 +42,20 @@ export default {
   components: {
     RightComponent,
   },
+  data() {
+    return {
+      // 根据此标记判断是否显示该标签
+      flag: null,
+    };
+  },
   computed: {
     ...mapState({
       articles: (state) => state.classic.articles,
     }),
+  },
+  created() {
+    // 这里是获取当前路径
+    this.flag = this.$route.path;
   },
 };
 </script>

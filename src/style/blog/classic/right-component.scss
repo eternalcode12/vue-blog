@@ -45,6 +45,7 @@ div.outer {
           justify-content: center;
           width: 270px;
           margin: 20px 0 10px 0;
+          font-weight: 500;
         }
         a {
           display: flex;
@@ -114,6 +115,7 @@ div.outer {
         flex-direction: column;
         justify-content: center;
         li {
+          border-bottom: 1px solid #eceef0;
           a {
             display: flex;
             width: 100%;

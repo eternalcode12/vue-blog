@@ -96,17 +96,21 @@
         <p>Get the latest news,discounts,offers.</p>
         <div class="input">
           <i class="fa fa-envelope" aria-hidden="true"></i>
-          <el-input v-model="subscribe" placeholder="Enter Email Address">
+          <el-input
+            v-model="subscribe"
+            @keyup.enter.native="submitSubscribe"
+            placeholder="Enter Email Address"
+          >
           </el-input>
         </div>
-        <button>Subscribe</button>
+        <button @click="submitSubscribe">Subscribe</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "RightComponent",
   data() {
@@ -126,8 +130,17 @@ export default {
     }),
   },
   methods: {
+    ...mapActions({
+      getSubscribe: (actions) => actions.classic.getSubscribe,
+    }),
     submit() {
       console.log(this.keyword);
+    },
+    submitSubscribe() {
+      this.$store.dispatch("getSubscribe", {
+        email: this.subscribe,
+        message: this.$message,
+      });
     },
   },
 };

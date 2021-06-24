@@ -1915,6 +1915,13 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   "version" "1.11.0"
 
+"axios@^0.21.1":
+  "integrity" "sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg="
+  "resolved" "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz"
+  "version" "0.21.1"
+  dependencies:
+    "follow-redirects" "^1.10.0"
+
 "babel-eslint@^10.1.0":
   "integrity" "sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg=="
   "resolved" "https://registry.npmjs.org/babel-eslint/-/babel-eslint-10.1.0.tgz"
@@ -4314,7 +4321,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.0.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.10.0":
   "integrity" "sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz"
   "version" "1.14.1"
@@ -6298,6 +6305,11 @@
     "sass-graph" "2.2.5"
     "stdout-stream" "^1.4.0"
     "true-case-path" "^1.0.2"
+
+"nodemailer@^6.6.2":
+  "integrity" "sha1-4YTJ7VvuJFo+C8q8clWGY4V1cRQ="
+  "resolved" "https://registry.nlark.com/nodemailer/download/nodemailer-6.6.2.tgz"
+  "version" "6.6.2"
 
 "nopt@^5.0.0":
   "integrity" "sha1-UwlCu1ilEvzK/lP+IQ8TolNV3Ig="

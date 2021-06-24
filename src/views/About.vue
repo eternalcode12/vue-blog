@@ -16,7 +16,7 @@ import Team from "@/components/about/Team";
 import FooterBanner from "@/components/about/FooterBanner";
 import Foot from "@/components/Foot";
 import BannerComponent from "@/components/BannerComponent";
-
+import { getTest } from "@/api/home";
 export default {
   name: "About",
   components: {
@@ -26,6 +26,16 @@ export default {
     FooterBanner,
     Foot,
     BannerComponent,
+  },
+  created() {
+    console.log(123);
+    getTest()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
 </script>

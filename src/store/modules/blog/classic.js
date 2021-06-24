@@ -1,44 +1,32 @@
+const {
+  getSubscribe
+} = require('@/api/classic')
+
 const state = {
   articles: [{
     imgUrl: require('../../../assets/images/classic-1.jpeg'),
     alt: 'classic-1',
     title: 'Vestibulum posuere Nulla lobortis magna.',
     info: 'September 24,2019 -By John Handley- 12 Comments',
-    contents: [
-      'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metus',
-      'ac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas',
-      'tincidunt convallis metus sit amet porta Integer venenatis elit.'
-    ]
+    contents: 'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metusac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas tincidunt convallis metus sit amet porta Integer venenatis elit.'
   }, {
     imgUrl: require('../../../assets/images/classic-2.jpeg'),
     alt: 'classic-2',
     title: 'Egestas massa elit commodo sapien erat.',
     info: 'September 25,2019 -By John Handley- 2 Comments',
-    contents: [
-      'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metus',
-      'ac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas',
-      'tincidunt convallis metus sit amet porta Integer venenatis elit.'
-    ]
+    contents: 'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metusac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas tincidunt convallis metus sit amet porta Integer venenatis elit.'
   }, {
     imgUrl: require('../../../assets/images/classic-3.jpeg'),
     alt: 'classic-3',
     title: 'Consequat nisl dapibus volutpat purus sagitis.',
     info: 'September 26,2019 -By John Handley- 8 Comments',
-    contents: [
-      'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metus',
-      'ac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas',
-      'tincidunt convallis metus sit amet porta Integer venenatis elit.'
-    ]
+    contents: 'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metusac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas tincidunt convallis metus sit amet porta Integer venenatis elit.'
   }, {
     imgUrl: require('../../../assets/images/classic-4.jpeg'),
     alt: 'classic-4',
     title: 'Faucibus lectus commodo est ultrices ultrices.',
     info: 'September 27,2019 -By John Handley- 10 Comments',
-    contents: [
-      'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metus',
-      'ac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas',
-      'tincidunt convallis metus sit amet porta Integer venenatis elit.'
-    ]
+    contents: 'Placerat metus laoreet at Maecenas gravida erat eu ultrices luctus mi leo efficitur metusac condimentum elit tortor ut orci Nulla pharetra arcu non tristique hendrerit maecenas tincidunt convallis metus sit amet porta Integer venenatis elit.'
   }, ],
   // 图标
   icons: [{
@@ -106,7 +94,36 @@ const mutations = {
 }
 
 const actions = {
-
+  getSubscribe(context, val) {
+    let reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
+    if (reg.test(val.email)) {
+      getSubscribe({
+        email: val.email
+      }).then(res => {
+        if (res.code === 200) {
+          val.message({
+            type: 'success',
+            message: '订阅成功'
+          })
+        } else {
+          val.message({
+            type: 'error',
+            message: '已成功订阅'
+          })
+        }
+      }).catch(err => {
+        val.message({
+          type: 'error',
+          message: '服务器错误'
+        })
+      })
+    } else {
+      val.message({
+        type: 'error',
+        message: '请检查你的邮箱是否正确!'
+      })
+    }
+  }
 }
 
 module.exports = {
