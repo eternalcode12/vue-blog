@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import RightComponent from "./RightComponent.vue";
 export default {
   name: "BlogComponent",
@@ -53,9 +53,18 @@ export default {
       articles: (state) => state.classic.articles,
     }),
   },
+  methods: {
+    ...mapActions({
+      getApiBlogContent: actions => actions.classic.getApiBlogContent
+    }),
+    getBlogInfos() {
+      this.$store.dispatch('getApiBlogContent')
+    }
+  },
   created() {
     // 这里是获取当前路径
     this.flag = this.$route.path;
+    this.getBlogInfos()
   },
 };
 </script>

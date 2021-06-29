@@ -1,5 +1,6 @@
 const {
-  getSubscribe
+  getSubscribe,
+  getBlogContent
 } = require('@/api/classic')
 
 const state = {
@@ -49,19 +50,19 @@ const state = {
   categories: [{
     title: 'Journey',
     url: '/journey',
-    count: 40
+    count: '40'
   }, {
     title: 'Photography',
     url: '/photography',
-    count: 11
+    count: '11'
   }, {
     title: 'Lifestyle',
     url: '/lifestyle',
-    count: 09
+    count: '09'
   }, {
     title: 'Food &Drinks',
     url: '/fooddrinks',
-    count: 28
+    count: '28'
   }],
   // 欢迎程度
   populars: [{
@@ -90,10 +91,18 @@ const state = {
 }
 
 const mutations = {
-
+  getBlog(state) {
+    getBlogContent('eternalcoder').then(res => {
+      state.articles = res.data
+      console.log(state.articles)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 }
 
 const actions = {
+  // 获取订阅
   getSubscribe(context, val) {
     let reg = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/
     if (reg.test(val.email)) {
@@ -123,6 +132,11 @@ const actions = {
         message: '请检查你的邮箱是否正确!'
       })
     }
+  },
+
+  // 获取博客信息
+  getApiBlogContent(context) {
+    context.commit('getBlog')
   }
 }
 
