@@ -134,6 +134,9 @@ const mutations = {
   },
   toGoBackHome(state, router) {
     router.push('/')
+  },
+  loginAndGetToken(state) {
+
   }
 }
 
